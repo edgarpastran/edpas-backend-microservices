@@ -1,0 +1,42 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost/edpas_java_fullstack
+    username: postgres
+    password: 12345
+  mail:
+    default-encoding: UTF-8
+    host: smtp.gmail.com
+    username: edpas.demo@gmail.com
+    password: edpas-2019
+    port: 587
+    properties:
+      mail:
+        ssl:
+          enable: true
+        smtp:
+          auth: true
+          starttls:
+            enable: true       
+            required: true     
+    protocol: smtp
+    test-connection: false
+    
+server:
+   port: 8081
+   
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+# for security
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9999/user 
